@@ -26,37 +26,53 @@
 
 
 <script> 
+
+
+    var nrOfSquares = 8;
     var contentDiv = document.getElementById("content");
 
     var board = document.createElement("div");
     board.className = "board";
-   
-    for (var y = 0; y < 8; y++) {
-        addRowToBoard();
+
+    for (var y = 0; y < nrOfSquares; y++) {
+        var row = addRowToBoard();
+
+
+        for (var x = 0; x < nrOfSquares; x++) {
+        var square = document.createElement("div");
+        square.className = "square";
+
+    
+            if ((x+y)%2) {
+                square.style.backgroundColor = "pink";
+            } else {
+                square.style.backgroundColor = "orange";
+            }
+    
+
+
+
+        row.appendChild(square);
+        }
     }
     
-   
+    
     
 
     contentDiv.appendChild(board);
 
     function addRowToBoard() {
-    /* create row */
-    var row = document.createElement("div");
-    row.className = "row";
-    /*set background*/
-    if (y%2) {
-    /*if value is 1 (true) it will print black color*/
-    row.style.backgroundColor = "black";
-    } else {
-    /*if value is 0 (false) it will print white color*/
-    row.style.backgroundColor = "white";
-    }
-    /* add the row to the child*/
-    board.appendChild(row);
-    
+        /* create row */
+        var row = document.createElement("div");
+        row.className = "row";
+       
+        
+        board.appendChild(row);
+        return row;
 
+        
     }
+    
 
 </script>
 </body>
