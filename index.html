@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="site.css">
+    <title>Magic Board</title>
+</head>
+
+</div>
+
+<body>
+    <div class="header">
+        <button>Start</button>
+        </div>
+
+        <div id="content"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script> 
+    var contentDiv = document.getElementById("content");
+
+    var board = document.createElement("div");
+    board.className = "board";
+   
+    for (var y = 0; y < 8; y++) {
+        addRowToBoard();
+    }
+    
+   
+    
+
+    contentDiv.appendChild(board);
+
+    function addRowToBoard() {
+    /* create row */
+    var row = document.createElement("div");
+    row.className = "row";
+    /*set background*/
+    if (y%2) {
+    /*if value is 1 (true) it will print black color*/
+    row.style.backgroundColor = "black";
+    } else {
+    /*if value is 0 (false) it will print white color*/
+    row.style.backgroundColor = "white";
+    }
+    /* add the row to the child*/
+    board.appendChild(row);
+    
+
+    }
+
+</script>
+</body>
+</html>
